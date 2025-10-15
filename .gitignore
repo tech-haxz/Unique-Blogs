@@ -1,0 +1,4 @@
+.venv
+uploads
+blog.db
+node_modules
