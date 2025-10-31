@@ -39,7 +39,7 @@ def login(request: Annotated[OAuth2PasswordRequestForm, Depends()], db: SessionD
         value=access_token,
         httponly=True,
         max_age=ACCESS_TOKEN_EXPIRE_MINUTES * 60,
-        samesite="lax",
+        samesite="none",
         secure=True  # Set to True in production with HTTPS
     )
 
@@ -48,7 +48,7 @@ def login(request: Annotated[OAuth2PasswordRequestForm, Depends()], db: SessionD
         value=refresh_token,
         httponly=True,
         max_age=7 * 24 * 60 * 60,  # 7 days
-        samesite="lax",
+        samesite="none",
         secure=True  # Set to True in production with HTTPS
     )
     return {"message": "Login successful"}
@@ -79,7 +79,7 @@ def refresh_token(response: Response, refresh_token: str = Cookie(None)):
         value=access_token,
         httponly=True,
         max_age=ACCESS_TOKEN_EXPIRE_MINUTES * 60,
-        samesite="lax",
+        samesite="none",
         secure=True
     )
     return {"access_token": access_token}
