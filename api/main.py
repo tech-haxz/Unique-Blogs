@@ -17,15 +17,15 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
-origins = [
-    "http://localhost:5173",
-    "https://unique-blogs.netlify.app/",
-]
+# origins = [
+#     "http://localhost:5173",
+#     "https://unique-blogs.netlify.app/",
+# ]
 
 # Set all CORS enabled origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
