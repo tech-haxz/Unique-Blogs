@@ -164,7 +164,7 @@ const Login = ({ open, onClose }) => {
         {/* Footer */}
         <p className="mt-4 text-center text-sm text-gray-500">
           Don’t have an account?{" "}
-          <a href="/signup" className="text-gray-900 underline hover:no-underline">
+          <a href="/" className="text-gray-900 underline hover:no-underline">
             Sign up
           </a>
         </p>

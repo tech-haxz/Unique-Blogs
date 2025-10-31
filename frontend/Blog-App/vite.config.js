@@ -7,13 +7,13 @@ export default defineConfig({
     tailwindcss(),
     react(),
   ],
-  server: {
-    proxy: {
-      '/api/v1': {
-        target: 'http://localhost:8000',
-        changeOrigin: true,
-        secure: false,
-      }
-    }
-  }
+  // server: {
+  //   proxy: {
+  //     '/api/v1': {
+  //       target: 'http://localhost:8000',
+  //       changeOrigin: true,
+  //       secure: false,
+  //     }
+  //   }
+  // }
 })

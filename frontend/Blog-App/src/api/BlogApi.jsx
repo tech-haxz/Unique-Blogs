@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create an axios instance with base URL and headers
 export const api = axios.create({
-    baseURL: "/api/v1",
+    baseURL: "https://unique-blogs.onrender.com/api/v1",
     withCredentials: true, //It is important to include this option to allow cookies to be sent with requests.
     headers: {
         "Content-Type": 'application/json',
