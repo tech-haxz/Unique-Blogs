@@ -34,6 +34,8 @@ UPLOAD_DIRECTORY = os.path.join(os.getcwd(), "uploads")
 app.mount("/uploads", StaticFiles(directory=UPLOAD_DIRECTORY), name="uploads")
 
 
+app.get("/")(lambda: {"message": "Welcome to FastAPI Blog Application"})
+
 app.include_router(authentication.router)
 app.include_router(blog.router)
 app.include_router(user.router)
