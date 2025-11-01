@@ -50,8 +50,31 @@ def get_user(username: str, db: SessionDep):
 def read_users_me(current_user: Annotated[Users, Depends(get_current_user)]):
     return current_user
 
-@router.post('/users/logout')
+@router.post("/users/logout")
 def logout(response: Response):
-    response.delete_cookie(key="access_token")
-    response.delete_cookie(key="refresh_token")
-    return {"message": "Logout successful"}
+    # delete cookie (works if same path/domain used when setting)
+    response.delete_cookie("access_token", path="/", samesite="none")
+    response.delete_cookie("refresh_token", path="/", samesite="none")
+
+    # fallback: explicitly overwrite with empty value + expire immediately
+    response.set_cookie(
+        "access_token",
+        "",
+        httponly=True,
+        max_age=0,
+        expires=0,
+        path="/",
+        samesite="none",
+        secure=True,
+    )
+    response.set_cookie(
+        "refresh_token",
+        "",
+        httponly=True,
+        max_age=0,
+        expires=0,
+        path="/",
+        samesite="none",
+        secure=True,
+    )
+    return {"message": "Logged out"}

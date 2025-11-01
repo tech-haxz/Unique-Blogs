@@ -18,7 +18,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 
 origins = [
-    "https://unique-blogs.netlify.app",
+    "https://unique-blogs.netlify.app/",
 ]
 
 # Set all CORS enabled origins
