@@ -99,10 +99,18 @@ export const registerUser = async(userData) => {
 // Function to login a user
 export const loginUser = async(credentials) => {
     try {
-        const response =  await api.post('/users/login', credentials, {headers: {
-            "Content-Type": 'application/x-www-form-urlencoded',
-            Accept: 'application/json',
-        }});
+        // OAuth2 expects form-urlencoded body
+        const params = new URLSearchParams();
+        params.append('username', credentials.username);
+        params.append('password', credentials.password);
+
+        const response =  await api.post('/users/login', params, {
+            headers: {
+                "Content-Type": 'application/x-www-form-urlencoded',
+                Accept: 'application/json',
+            },
+            withCredentials: true, // ensure cookies allowed
+        });
         return response.data;
     }
     catch (error) {
