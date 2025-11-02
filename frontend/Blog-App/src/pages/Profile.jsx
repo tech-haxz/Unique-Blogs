@@ -100,7 +100,7 @@ const Profile = () => {
                 <div className="h-36 w-full overflow-hidden rounded-t-xl bg-gray-200 flex items-center justify-center">
                   {blog.image ? (
                     <img
-                      src={`http://127.0.0.1:8000${blog.image}`}
+                      src={`https://unique-blogs.onrender.com${blog.image}`}
                       alt={blog.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />

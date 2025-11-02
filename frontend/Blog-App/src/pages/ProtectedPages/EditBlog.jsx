@@ -22,7 +22,7 @@ export const EditBlog = () => {
         setTitle(res.title);
         setBody(res.body);
         setImage(null); // no file selected yet
-        setImagePreview(res.image ? `http://127.0.0.1:8000${res.image}` : '');
+        setImagePreview(res.image ? `https://unique-blogs.onrender.com${res.image}` : '');
       } catch (error) {
         console.error("Error fetching blog data:", error);
       }

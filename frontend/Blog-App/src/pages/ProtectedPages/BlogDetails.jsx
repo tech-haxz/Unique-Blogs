@@ -28,7 +28,7 @@ export const BlogDetails = () => {
                     <>
                         <div className="relative">
                             <img
-                                src={`http://127.0.0.1:8000${data.image}`}
+                                src={`https://unique-blogs.onrender.com${data.image}`}
                                 alt={data.title}
                                 className="w-full h-64 object-cover"
                             />
