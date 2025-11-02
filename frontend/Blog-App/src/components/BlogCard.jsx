@@ -12,7 +12,7 @@ function BlogCard(props) {
         <div className="md:flex-shrink-0">
           <img
             className="h-48 w-full object-cover md:h-full md:w-100"
-            src={`http://127.0.0.1:8000${image}`}
+            src={`https://unique-blogs.onrender.com${image}`}
             alt="Blog Thumbnail"
           />
         </div>
