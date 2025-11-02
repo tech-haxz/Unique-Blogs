@@ -1,5 +1,4 @@
 import Login from "../pages/Login";
-import { Navigate } from "react-router-dom";
 import { useState } from "react";
 import Register from "../pages/Register";
 import NavBarProtected from "./NavBarProtected";
@@ -10,9 +9,7 @@ const Navbar = () => {
   const [showRegister, setShowRegister] = useState(false);
 
   const isAuthenticated = useAuthCheck();
-  if (isAuthenticated === null) {
-    return <div>Loading...</div>; // or a loading spinner
-  }
+
 
   if (isAuthenticated === true) {
     return <NavBarProtected />

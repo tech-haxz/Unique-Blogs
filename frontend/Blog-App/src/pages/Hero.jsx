@@ -3,12 +3,13 @@ import { useState, useEffect } from "react";
 import Login from "./Login.jsx";
 import { Home } from "./ProtectedPages/Home.jsx";
 import { useAuthCheck } from "../hooks/useAuthCheck.js";
+import Loading from "../components/Loading.jsx";
 
 function Hero() {
   const isAuthenticated = useAuthCheck();
   const [showLogin, setShowLogin] = useState(false);
 
-  if (isAuthenticated === null) return <div>Loading...</div>;
+  if (isAuthenticated === null) return <Loading />;
   if (isAuthenticated === true) return <Home />;
 
   

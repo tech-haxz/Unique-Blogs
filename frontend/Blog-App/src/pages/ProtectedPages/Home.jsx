@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import BlogCard from "../../components/BlogCard";
 import { getBlogs } from "../../api/BlogApi";
+import Loading from "../../components/Loading.jsx";
 
 export const Home = () => {
   const [blogs, setBlogs] = useState([]);
@@ -17,6 +18,14 @@ export const Home = () => {
       console.error("Error fetching blogs:", error);
     }
   };
+
+  if (blogs.length === 0) {
+    return <div className="main w-full bg-white absolute left-0 top-0">No Blogs Found</div>;
+  }
+
+  if (!blogs) {
+    return <Loading />;
+  }
 
   return (
     <div className="main w-full bg-white absolute left-0 top-0">

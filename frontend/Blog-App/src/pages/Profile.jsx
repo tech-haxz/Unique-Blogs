@@ -5,6 +5,7 @@ import { MdDeleteForever } from "react-icons/md";
 import parse from "html-react-parser";
 import { useNavigate } from "react-router-dom";
 import { deleteBlog } from "../api/BlogApi";
+import Loading from "../components/Loading.jsx";
 
 const Profile = () => {
   const data = useContext(AuthContext);
@@ -53,6 +54,10 @@ const Profile = () => {
     if (!text) return "";
     return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
   };
+
+  if (!user) {
+    return <Loading />;
+  }
 
   return (
     <div className="w-full absolute bg-gray-50 top-10 left-0">

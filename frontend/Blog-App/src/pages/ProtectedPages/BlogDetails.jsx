@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getBlog } from "../../api/BlogApi";
 import parse from 'html-react-parser';
+import Loading from "../../components/Loading.jsx";
 
 export const BlogDetails = () => {
     const { id } = useParams();
@@ -55,7 +56,7 @@ export const BlogDetails = () => {
                     </>
                 ) : (
                     <div className="flex justify-center items-center h-64">
-                        <span className="text-gray-500 text-lg">Loading blog details...</span>
+                        <Loading />
                     </div>
                 )}
             </div>
