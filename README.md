@@ -62,6 +62,6 @@ cd Unique-Blogs
 ```
 
 
-# Live Deployed URl:
+# Live Deployed URL:
 ```bash
 https://unique-blogs.netlify.app/
