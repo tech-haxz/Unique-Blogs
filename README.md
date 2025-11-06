@@ -58,3 +58,10 @@ These instructions help you run the project locally for development or testing.
 ```bash
 git clone https://github.com/tech-haxz/Unique-Blogs.git
 cd Unique-Blogs
+
+```
+
+
+# Live Deployed URl:
+```bash
+https://unique-blogs.netlify.app/
