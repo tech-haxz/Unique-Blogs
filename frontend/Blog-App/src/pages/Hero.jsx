@@ -9,7 +9,6 @@ function Hero() {
   const isAuthenticated = useAuthCheck();
   const [showLogin, setShowLogin] = useState(false);
 
-  if (isAuthenticated === null) return <Loading />;
   if (isAuthenticated === true) return <Home />;
 
   

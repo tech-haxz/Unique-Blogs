@@ -19,6 +19,8 @@ app = FastAPI(lifespan=lifespan)
 
 origins = [
     "https://unique-blogs.netlify.app",
+    "http://localhost:5173/",
+    "http://localhost:8000",
 ]
 
 # Set all CORS enabled origins
